@@ -1,0 +1,22 @@
+{
+
+  // compiler  specefic settings 
+  "compilerOptions": {
+
+    "checkJs": true,
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    // This allows importing JSON files directly into TypeScript files.
+    "resolveJsonModule": true,
+    "lib": ["es6", "dom", "es2017"],
+  },
+  // this for including what folders will be checked by the compiler
+  "include": [
+    "src"
+  ],
+  // this for preventing compiler from checking with this settings for these folders
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
