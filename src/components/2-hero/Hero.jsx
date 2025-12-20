@@ -5,22 +5,23 @@ import { useRef, useState, useEffect } from 'react';
 import labtopAnimation from '../../animation/labtop.json'
 import { motion } from 'framer-motion';
 
+const HERO_TITLE = 'Software designer, founder, and amateur astronaut.';
+const TYPING_SPEED_MS = 50;
 
 export default function Hero() {
   const lottieRef = useRef();
   const [displayedText, setDisplayedText] = useState('');
-  const fullText = 'Software designer, founder, and amateur astronaut.';
   
   useEffect(() => {
     let index = 0;
     const typingInterval = setInterval(() => {
-      if (index <= fullText.length) {
-        setDisplayedText(fullText.slice(0, index));
+      if (index <= HERO_TITLE.length) {
+        setDisplayedText(HERO_TITLE.slice(0, index));
         index++;
       } else {
         clearInterval(typingInterval);
       }
-    }, 50);
+    }, TYPING_SPEED_MS);
     
     return () => clearInterval(typingInterval);
   }, []);
