@@ -1,5 +1,5 @@
 
-import  './Hero.css'
+import  './hero.css'
 import Lottie from "lottie-react";
 import { useRef } from 'react';
 import labtopAnimation from '../../animation/labtop.json'
