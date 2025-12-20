@@ -4,11 +4,62 @@ table of contents
 1- Hero Design 
 2- Left Section
 3-Right Section
+4- Animations & Effects
 =========================*/
 
 
 section.hero {
 margin-top: 3rem;
+position: relative;
+overflow: hidden;
+}
+
+/* ======================
+Background Animation
+========================= */
+.hero-background-animated {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: linear-gradient(-45deg, 
+    rgba(93, 188, 252, 0.05), 
+    rgba(255, 140, 0, 0.05), 
+    rgba(147, 51, 234, 0.05), 
+    rgba(34, 211, 238, 0.05));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Cursor blink animation */
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+  color: var(--blue);
+  font-weight: 100;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* ======================
@@ -18,6 +69,8 @@ margin-top: 3rem;
 section.hero .left-section {
 flex-grow: 1;
 min-height: auto;
+position: relative;
+z-index: 1;
 } 
 
 section.hero .parent-avatar.flex {
@@ -56,18 +109,21 @@ section.hero p.sub-title {
   color: var(--subtitle);
   font-size:1.2rem;
   transition: 0.3s; 
-  
+ }
+
+ section.hero .all-icons .icon {
+   cursor: pointer;
+   transition: all 0.3s ease;
+   position: relative;
+ }
+
+ section.hero .all-icons .icon::before {
+   transition: all 0.3s ease;
  }
 
  section.hero .all-icons .icon:hover  {
-  font-size: 1.6rem;
-  color:var(--icon-hover);
-  transition: 0.3s;
-  cursor: pointer;
-  
-  
-  
-
+  color: var(--icon-hover);
+  filter: drop-shadow(0 0 8px var(--blue));
 }
 
 /* ====================================
@@ -76,7 +132,8 @@ section.hero p.sub-title {
 section.hero .animation {
   translate: 55px 40px;
   scale: 1.2;
-  
+  position: relative;
+  z-index: 1;
 }
 
 
