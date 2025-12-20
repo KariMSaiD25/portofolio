@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function header() {
+export default function Header() {
   const [showModal , setShowModal] = useState(false); 
 
   const [theme , setTheme] = useState(localStorage.getItem('currentMode')??'dark');
