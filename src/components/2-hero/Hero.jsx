@@ -47,7 +47,7 @@ export default function Hero() {
         initial={{opacity: 0, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.8, delay: 0.3}}
-        className="sub-title">I'm Karim, a software designer and entrepreneur based in New York City. I'm the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.</motion.p>
+        className="sub-title">I&apos;m Karim, a software designer and entrepreneur based in New York City. I&apos;m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.</motion.p>
         
         <motion.div 
         initial={{opacity: 0, y: 20}}
